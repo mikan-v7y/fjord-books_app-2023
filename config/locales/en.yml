@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+
+  books:
+    top: "Books"
+    title: "title"
+    memo: "Memo content"
+    author: "Author"
+    picture: "picture"
+    show: "show this book"
+    new: "New book"
