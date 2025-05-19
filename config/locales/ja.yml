@@ -4,7 +4,7 @@ ja:
   books:
     top: "本一覧"
     title: "タイトル"
-    memo: "メモ内容"
+    memo: "メモ"
     author: "著書"
     picture: "picture"
     show: "この本を見る"

@@ -35,7 +35,7 @@ en:
   books:
     top: "Books"
     title: "title"
-    memo: "Memo content"
+    memo: "Memo"
     author: "Author"
     picture: "picture"
     show: "show this book"
