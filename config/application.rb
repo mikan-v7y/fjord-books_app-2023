@@ -19,6 +19,7 @@ module BooksApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # ロケールを:en以外に変更する
     config.i18n.default_locale = :ja
 
     # アプリケーションでの利用を許可するロケールのリストを渡す
