@@ -34,9 +34,9 @@ en:
 
   books:
     top: "Books"
-    title: "title"
+    title: "Title"
     memo: "Memo"
     author: "Author"
-    picture: "picture"
+    picture: "Picture"
     show: "show this book"
     new: "New book"
