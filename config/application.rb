@@ -26,7 +26,7 @@ module BooksApp
     I18n.load_path += Dir[Rails.root.join("config", "locale", "*.{yml}")]
 
     # ロケールを:en以外に変更する（一時的に）
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ja
 
     # アプリケーションでの利用を許可するロケールのリストを渡す
     I18n.available_locales = [:en, :ja]
