@@ -1,0 +1,21 @@
+current directory: /Users/miruru/my/FBC/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+/Users/miruru/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/miruru/my/FBC/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250522-80703-z88qr1 sitelibdir\=./.gem.20250522-80703-z88qr1 clean
+
+current directory: /Users/miruru/my/FBC/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250522-80703-z88qr1 sitelibdir\=./.gem.20250522-80703-z88qr1
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/miruru/my/FBC/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250522-80703-z88qr1 sitelibdir\=./.gem.20250522-80703-z88qr1 install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20250522-80703-z88qr1/racc
+
+current directory: /Users/miruru/my/FBC/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250522-80703-z88qr1 sitelibdir\=./.gem.20250522-80703-z88qr1 clean
