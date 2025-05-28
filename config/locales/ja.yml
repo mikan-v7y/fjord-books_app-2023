@@ -1,11 +1,13 @@
 ja:
-  hello: "こんにちは"
-
-  books:
-    top: "本一覧"
-    title: "タイトル"
-    memo: "メモ"
-    author: "著書"
-    picture: "写真"
-    show: "この本を見る"
-    new: "新しい本を登録する"
+  activerecord:
+    models:
+      book: 本
+    attributes:
+      book:
+        top: "本一覧"
+        title: "タイトル"
+        memo: "メモ"
+        author: "著書"
+        picture: "写真"
+        show: "この本を見る"
+        new: "新しい本を登録する"
