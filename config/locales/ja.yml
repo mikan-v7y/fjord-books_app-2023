@@ -4,10 +4,18 @@ ja:
       book: 本
     attributes:
       book:
-        top: "本一覧"
         title: "タイトル"
         memo: "メモ"
         author: "著書"
         picture: "写真"
-        show: "この本を見る"
-        new: "新しい本を登録する"
+  books:
+    top: "本一覧"
+    show: "この本を見る"
+    new: "新しい本を作成する"
+    edit: "この本を編集する"
+    back: "本一覧に戻る"
+    destroy: "この本を削除する"
+  helpers:
+    submit:
+      create: "本を作成する"
+      update: "本を更新する"

@@ -35,10 +35,17 @@ en:
       book: Book
     attributes:
       book:
-        top: "Books"
         title: "Title"
         memo: "Memo"
         author: "Author"
         picture: "Picture"
-        show: "show this book"
-        new: "New book"
+  books:
+    top: "Books"
+    show: "Show this book"
+    new: "Create new book"
+    edit: "Editing book"
+    back: "Back to books"
+  helpers:
+    submit:
+      create: "create new book"
+      update: "update this book"
