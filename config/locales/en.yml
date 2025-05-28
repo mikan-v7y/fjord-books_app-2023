@@ -40,11 +40,12 @@ en:
         author: "Author"
         picture: "Picture"
   books:
-    top: "Books"
-    show: "Show this book"
-    new: "Create new book"
-    edit: "Editing book"
-    back: "Back to books"
+    index:
+      top: "Books"
+      show: "Show this book"
+      new: "Create new book"
+      edit: "Editing book"
+      back: "Back to books"
   helpers:
     submit:
       create: "create new book"
