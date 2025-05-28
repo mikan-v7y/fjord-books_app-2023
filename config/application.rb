@@ -22,9 +22,6 @@ module BooksApp
     # デフォルト言語を設定
     config.i18n.default_locale = :ja
 
-    # ロケールを:en以外に変更する（一時的に）
-    # config.i18n.default_locale = :ja
-
     # アプリケーションでの利用を許可するロケールのリストを渡す
     I18n.available_locales = [:en, :ja]
   end
