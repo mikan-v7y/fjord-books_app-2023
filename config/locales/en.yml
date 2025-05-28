@@ -46,6 +46,10 @@ en:
       new: "Create new book"
       edit: "Editing book"
       back: "Back to books"
+      notice:
+        create: "Book was successfully created."
+        update: "Book was successfully updated."
+        destroy: "Book was successfully destroyed."
   helpers:
     submit:
       create: "create new book"

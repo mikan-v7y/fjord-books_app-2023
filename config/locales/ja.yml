@@ -16,6 +16,10 @@ ja:
       edit: "この本を編集する"
       back: "本一覧に戻る"
       destroy: "この本を削除する"
+      notice:
+        create: "新しい本が正常に作成されました"
+        update: "正常に更新されました"
+        destroy: "正常に削除されました"
   helpers:
     submit:
       create: "本を作成する"
