@@ -35,7 +35,4 @@
 /config/master.key
 
 /public/uploads
-
-vendor/bundle/ruby/
-
 .env
