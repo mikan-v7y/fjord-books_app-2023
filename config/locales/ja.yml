@@ -9,17 +9,18 @@ ja:
         author: "著書"
         picture: "写真"
   books:
-    index:
-      top: "本一覧"
-      show: "この本を見る"
-      new: "新しい本を作成する"
-      edit: "この本を編集する"
-      back: "本一覧に戻る"
-      destroy: "この本を削除する"
+    create:
       notice:
         create: "新しい本が正常に作成されました"
         update: "正常に更新されました"
         destroy: "正常に削除されました"
+  index:
+    top: "本一覧"
+    show: "この本を見る"
+    new: "新しい本を作成する"
+    edit: "この本を編集する"
+    back: "本一覧に戻る"
+    destroy: "この本を削除する"
   helpers:
     submit:
       create: "本を作成する"
