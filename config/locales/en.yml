@@ -43,14 +43,16 @@ en:
     create:
       notice:
         create: "Book was successfully created."
-        update: "Book was successfully updated."
-        destroy: "Book was successfully destroyed."
-    index:
-      top: "Books"
-      show: "Show this book"
-      new: "Create new book"
-      edit: "Editing book"
-      back: "Back to books"
+      index:
+        notice:
+          update: "Book was successfully updated."
+          destroy: "Book was successfully destroyed."
+        top: "Books"
+        show: "Show this book"
+        new: "Create new book"
+        edit: "Editing book"
+        back: "Back to books"
+        destroy: "destroy this book"
     helpers:
       submit:
         create: "create new book"
