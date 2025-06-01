@@ -12,9 +12,11 @@ ja:
     create:
       notice:
         create: "新しい本が正常に作成されました"
-    index:
+    update:
       notice:
         update: "正常に更新されました"
+    destroy:
+      notice:
         destroy: "正常に削除されました"
       top: "本一覧"
       show: "この本を見る"
