@@ -52,7 +52,7 @@ class BooksController < ApplicationController
     @book.destroy
 
     respond_to do |format|
-      format.html { redirect_to books_url, notice: t('books.index.notice.destroy') }
+      format.html { redirect_to books_url, notice: t('books.destroy.notice.destroy') }
       format.json { head :no_content }
     end
   end
