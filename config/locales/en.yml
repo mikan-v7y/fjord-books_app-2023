@@ -40,6 +40,22 @@ en:
         author: "Author"
         picture: "Picture"
   books:
+    index:
+      title: "Books"
+      new: "Create new book"
+      show: "Show this book"
+    show:
+      edit: "Edit this book"
+      back: "Back to books"
+      destroy: "Destroy this book"
+    new:
+      title: "Create new book"
+      create: "Create"
+      back: "Back to books"
+    edit:
+      title: "Edit this book"
+      show: "Show this book"
+      back: "Back to books"
     create:
       notice:
         create: "Book was successfully created."
@@ -49,13 +65,3 @@ en:
     destroy:
       notice:
         destroy: "Book was successfully destroyed."
-    edit:
-      edit: "Edit this book"
-    index:
-      top: "Books"
-      new: "Create new book"
-      show: "Show this book"
-      edit: "Editing book"
-      back: "Back to books"
-      create: "Create new book"
-      destroy: "Update this book"
