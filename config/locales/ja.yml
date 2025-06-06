@@ -9,6 +9,23 @@ ja:
         author: "著書"
         picture: "写真"
   books:
+    index:
+      title: "本一覧"
+      show: 'この本を見る'
+      new: "新しい本を作成する"
+    show:
+      edit: "この本を編集する"
+      back: "本一覧に戻る"
+      destroy: "この本を削除する"
+    new:
+      title: "新しい本を作成する"
+      create: "作成"
+      back: "本一覧に戻る"
+    edit:
+      title: "この本を編集する"
+      show: "この本を見る"
+      back: "本一覧に戻る"
+
     create:
       notice:
         create: "正常に作成されました"
@@ -18,13 +35,3 @@ ja:
     destroy:
       notice:
         destroy: "正常に削除されました"
-    edit:
-      edit: "この本を編集する"
-    index:
-      top: "本一覧"
-      new: "新しい本を作成する"
-      show: "この本を見る"
-      edit: "この本を編集する"
-      back: "本一覧に戻る"
-      create: "新しい本を作成する"
-      destroy: "この本を削除する"
