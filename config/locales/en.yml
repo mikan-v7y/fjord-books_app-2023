@@ -49,11 +49,11 @@ en:
       back: "Back to books"
       destroy: "Destroy this book"
     new:
-      title: "Create new book"
+      title: "New book"
       create: "Create"
       back: "Back to books"
     edit:
-      title: "Edit this book"
+      title: "Editing book"
       show: "Show this book"
       back: "Back to books"
   message:
