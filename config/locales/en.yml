@@ -33,12 +33,14 @@ en:
   activerecord:
     models:
       book: Book
+
     attributes:
       book:
         title: "Title"
         memo: "Memo"
         author: "Author"
         picture: "Picture"
+
   books:
     index:
       title: "Books"
@@ -56,8 +58,15 @@ en:
       title: "Editing book"
       show: "Show this book"
       back: "Back to books"
+
   message:
     books:
       created: "Book was successfully created."
       updated: "Book was successfully updated."
       destroyed: "Book was successfully destroyed."
+
+  helpers:
+    submit:
+      book:
+        create: "create"
+        update: "update"

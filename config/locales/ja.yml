@@ -2,12 +2,14 @@ ja:
   activerecord:
     models:
       book: 本
+
     attributes:
       book:
         title: "タイトル"
         memo: "メモ"
         author: "著書"
         picture: "写真"
+
   books:
     index:
       title: "本一覧"
@@ -30,3 +32,9 @@ ja:
       created: "正常に作成されました"
       updated: "正常に更新されました"
       destroyed: "正常に削除されました"
+
+  helpers:
+    submit:
+      book:
+        create: "作成"
+        update: "更新"

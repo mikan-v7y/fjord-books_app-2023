@@ -32,6 +32,6 @@
   </div>
 
   <div>
-    <%= form.submit t('books.new.create') %>
+    <%= form.submit(@book.new_record? ? t('helpers.submit.book.create') : t('helpers.submit.book.update')) %>
   </div>
 <% end %>
