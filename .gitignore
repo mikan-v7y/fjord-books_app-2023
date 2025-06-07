@@ -37,9 +37,6 @@
 /public/uploads
 
 .env
-vendor/
-log/
-tmp/
 db/seeds/*.jpg
 public/*.png
 public/favicon.ico
