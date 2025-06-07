@@ -5,3 +5,12 @@ ja:
       last: 最後
       previous: 前
       next: 次
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "%{entry_name} が見つかりません"
+          one: "%{entry_name} を <b>1</b> 件表示"
+          other: "%{entry_name} を <b>%{count}</b> 件表示"
+      more_pages:
+        display_entries: "%{entry_name} を <b>%{first}</b>〜<b>%{last}</b> 件表示（全 <b>%{total}</b> 件）"
