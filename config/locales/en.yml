@@ -42,8 +42,8 @@ en:
   books:
     index:
       title: "Books"
-      new: "Create new book"
       show: "Show this book"
+      new: "Create new book"
     show:
       edit: "Edit this book"
       back: "Back to books"
@@ -56,12 +56,8 @@ en:
       title: "Edit this book"
       show: "Show this book"
       back: "Back to books"
-    create:
-      notice:
-        create: "Book was successfully created."
-    update:
-      notice:
-        update: "Book was successfully updated."
-    destroy:
-      notice:
-        destroy: "Book was successfully destroyed."
+  message:
+    books:
+      created: "Book was successfully created."
+      updated: "Book was successfully updated."
+      destroyed: "Book was successfully destroyed."

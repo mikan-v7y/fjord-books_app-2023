@@ -25,13 +25,8 @@ ja:
       title: "この本を編集する"
       show: "この本を見る"
       back: "本一覧に戻る"
-
-    create:
-      notice:
-        create: "正常に作成されました"
-    update:
-      notice:
-        update: "正常に更新されました"
-    destroy:
-      notice:
-        destroy: "正常に削除されました"
+  message:
+    books:
+      created: "正常に作成されました"
+      updated: "正常に更新されました"
+      destroyed: "正常に削除されました"
