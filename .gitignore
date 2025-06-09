@@ -35,8 +35,3 @@
 /config/master.key
 
 /public/uploads
-
-.env
-db/seeds/*.jpg
-public/*.png
-public/favicon.ico
