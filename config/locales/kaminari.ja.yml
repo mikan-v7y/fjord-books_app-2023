@@ -5,7 +5,7 @@ ja:
       last: 最後
       previous: 前
       next: 次
-      truncate: "..."
+      truncate: "&hellip;"
   helpers:
     page_entries_info:
       one_page:
