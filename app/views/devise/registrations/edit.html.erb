@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :avatar, User.human_attribute_name(:avatar) %><br />
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar, accept: 'image/jpeg, image/png, image/gif' %>
   </div>
 
   <div class="field">
