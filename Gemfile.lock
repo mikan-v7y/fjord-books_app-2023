@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/Shopify/erb-lint
+  revision: a6c41c8e1260b9b8ab2c3c3004f88d01bc88a699
+  specs:
+    erb_lint (0.9.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop (>= 1)
+      smart_properties
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,7 +87,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     bcrypt (3.1.19)
-    better_html (2.0.2)
+    better_html (2.1.1)
       actionview (>= 6.0)
       activesupport (>= 6.0)
       ast (~> 2.0)
@@ -116,13 +128,6 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.11.0)
       devise (>= 4.9.0)
-    erb_lint (0.4.0)
-      activesupport
-      better_html (>= 2.0.1)
-      parser (>= 2.7.1.4)
-      rainbow
-      rubocop
-      smart_properties
     erubi (1.12.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
@@ -324,7 +329,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
-  erb_lint
+  erb_lint!
   faker
   i18n_generators
   image_processing (~> 1.2)

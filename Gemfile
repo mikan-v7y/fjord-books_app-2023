@@ -65,7 +65,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem 'erb_lint', require: false
+  gem 'erb_lint', git: 'https://github.com/Shopify/erb-lint', require: false
   gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web'
