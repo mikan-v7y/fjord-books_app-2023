@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
+<%= link_to t('.user_index'), users_path %>
+
 <h1><%= t('views.common.title_index', name: i18n_pluralize(Book.model_name.human)) %></h1>
 
 <div id="books" class="index-items">
