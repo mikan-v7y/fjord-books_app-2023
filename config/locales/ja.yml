@@ -224,5 +224,9 @@ ja:
       title: ユーザー一覧
       back: 戻る
     show:
+      title: "%{email}のプロフィール"
+      postal_code: 郵便番号
+      address: 住所
+      self_introduction: 自己紹介
       edit: 編集
       back: 戻る
