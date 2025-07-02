@@ -65,7 +65,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem 'erb_lint'
+  gem 'erb_lint', require: false
   gem 'faker'
   gem 'i18n_generators'
   # 以下のPRがリリースされたら最新のrubocopを使うようにする
