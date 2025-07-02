@@ -7,6 +7,10 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      user:
+        one: ユーザー
+        other: ユーザー
   date:
     abbr_day_names:
     - 日
@@ -205,3 +209,24 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+  layouts:
+    application:
+      sign_up: サインアップ
+      log_in: ログイン
+      logged_in_as: "ログイン中のユーザー：%{email}"
+      edit_: 編集
+      log_out: ログアウト
+  books:
+    index:
+      user_index: ユーザー一覧
+  users:
+    index:
+      title: ユーザー一覧
+      back: 戻る
+    show:
+      title: "%{email}のプロフィール"
+      postal_code: 郵便番号
+      address: 住所
+      self_introduction: 自己紹介
+      edit: 編集
+      back: 戻る

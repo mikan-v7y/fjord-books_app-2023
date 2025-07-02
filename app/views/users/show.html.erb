@@ -1,0 +1,14 @@
+
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t('.title', email: @user.email) %></h1>
+
+<p><%= t('.postal_code') %>: <%= @user.postal_code %></p>
+<p><%= t('.address') %>: <%= @user.address%></p>
+<p><%= t('.self_introduction')%>: <%= @user.self_introduction%></P>
+
+<% if current_user == @user %>
+  <%= link_to t('.edit'), edit_user_registration_path %>
+<% end %>
+
+<%= link_to t('.back'), users_path %>
