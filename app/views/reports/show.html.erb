@@ -13,6 +13,14 @@
 <%= render "comments/form", commentable: @report %>
 
 <h2>コメント一覧</h2>
-<% @report.comments.each do |comment| %>
-  <%= render comment %>
+
+<% if @report.comments.any? %>
+  <% @report.comments.each do |comment| %>
+    <div class="comment">
+      <p><strong><%= comment.user.display_name %></strong> さんが <%= l(comment.created_at, format: :short) %> に投稿:</p>
+      <p><%= comment.content %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>まだコメントはありません。</p>
 <% end %>

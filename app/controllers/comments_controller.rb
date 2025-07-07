@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
+    @comment.user = current_user
 
     if @comment.save
       redirect_to @commentable, notice: "コメントを投稿しました"
