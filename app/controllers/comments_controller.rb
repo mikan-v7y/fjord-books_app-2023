@@ -11,6 +11,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  before_action :set_comment, only: [:destroy]
+
+  def destroy
+    @comment.destroy
+    redirect_to @comment.commentable, notice: "コメントを削除しました"
+  end
+
   private
 
   def find_commentable
@@ -25,5 +32,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 end

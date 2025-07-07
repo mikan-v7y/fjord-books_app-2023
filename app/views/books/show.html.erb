@@ -20,6 +20,10 @@
       <p><strong><%= comment.user.display_name %></strong> さんが <%= l(comment.created_at, format: :short) %> に投稿:</p>
       <p><%= comment.content %></p>
     </div>
+
+    <% if comment.user == current_user %>
+      <%= button_to "削除", book_comment_path(@book, comment), method: :delete %>
+    <% end %>
   <% end %>
 <% else %>
   <p>まだコメントはありません。</p>
