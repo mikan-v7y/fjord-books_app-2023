@@ -1,0 +1,10 @@
+<h2>コメント編集</h2>
+
+<%= form_with(model: [@commentable, @comment]) do |f| %>
+  <div>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit "更新" %>
+  </div>
+<% end %>

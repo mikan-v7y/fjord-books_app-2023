@@ -13,6 +13,22 @@ class CommentsController < ApplicationController
 
   before_action :set_comment, only: [:destroy]
 
+  def edit
+    @commentable = find_commentable
+    @comment = @commentable.comments.find(params[:id])
+  end
+
+  def update
+    @commentable = find_commentable
+    @comment = @commentable.comments.find(params[:id])
+
+    if @comment.update(comment_params)
+      redirect_to @commentable, notice: "コメントを更新しました。"
+    else
+      redirect_to @commentable, alert: "コメントの更新に失敗しました"
+    end
+  end
+
   def destroy
     @comment.destroy
     redirect_to @comment.commentable, notice: "コメントを削除しました"

@@ -6,6 +6,7 @@
     </div>
 
     <% if comment.user == current_user %>
+      <%= button_to "編集", edit_polymorphic_path([commentable, comment]), method: :get %>
       <%= button_to "削除", polymorphic_path([commentable, comment]), method: :delete %>
     <% end %>
   <% end %>
