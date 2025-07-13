@@ -216,3 +216,8 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  comments:
+    form:
+      title: "コメントを書き込む"
+    list:
+      title: "コメント一覧"

@@ -20,3 +20,5 @@ ja:
       report:
         title: タイトル
         content: 本文
+        creator: 作成者
+        created_at: 投稿日時
