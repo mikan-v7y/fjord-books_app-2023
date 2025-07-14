@@ -208,6 +208,7 @@ ja:
         submit: 投稿
       list:
         title: "コメント一覧"
+        posted_by: "%{name} さんが %{date} に投稿"
         no_comments: まだコメントはありません
         edit: 編集
         update: 更新

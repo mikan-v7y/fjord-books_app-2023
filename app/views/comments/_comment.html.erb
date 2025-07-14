@@ -1,7 +1,7 @@
 <% if commentable.comments.any? %>
   <% commentable.comments.each do |comment| %>
     <div class="comment">
-      <p><strong><%= comment.user.display_name %></strong> さんが <%= l(comment.created_at, format: :short) %> に投稿:</p>
+        <%= t('views.comments.list.posted_by', name: comment.user.display_name, date: l(comment.created_at, format: :short)) %>
       <p><%= comment.content %></p>
     </div>
 
