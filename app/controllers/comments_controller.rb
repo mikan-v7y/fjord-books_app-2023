@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
@@ -41,8 +43,6 @@ class CommentsController < ApplicationController
       Book.find(params[:book_id])
     elsif params[:report_id]
       Report.find(params[:report_id])
-    else
-      nil
     end
   end
 

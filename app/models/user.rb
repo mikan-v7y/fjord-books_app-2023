@@ -15,6 +15,6 @@ class User < ApplicationRecord
          :validatable
 
   def display_name
-    name.present? ? name : email
+    (name.presence || email)
   end
 end
