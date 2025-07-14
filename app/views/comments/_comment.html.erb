@@ -6,10 +6,10 @@
     </div>
 
     <% if comment.user == current_user %>
-      <%= button_to "編集", edit_polymorphic_path([commentable, comment]), method: :get %>
-      <%= button_to "削除", polymorphic_path([commentable, comment]), method: :delete %>
+      <%= button_to t('views.comments.list.edit'), edit_polymorphic_path([commentable, comment]), method: :get %>
+      <%= button_to t('views.comments.list.delete'), polymorphic_path([commentable, comment]), method: :delete %>
     <% end %>
   <% end %>
 <% else %>
-  <p>まだコメントはありません。</p>
+  <p><%= t('views.comments.list.no_comments') %></p>
 <% end %>
