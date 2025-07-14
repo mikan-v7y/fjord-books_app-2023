@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @commentable, notice: "コメントを投稿しました"
+      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      redirect_to @commentable, alert: "コメントの投稿に失敗しました"
+      redirect_to @commentable, alert: t('controllers.comments.notice_create_failure', name: Comment.model_name.human)
     end
   end
 
@@ -23,15 +23,15 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to @commentable, notice: "コメントを更新しました。"
+      redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
-      redirect_to @commentable, alert: "コメントの更新に失敗しました"
+      redirect_to @commentable, alert: t('controllers.common.notice_update_failure', name: Comment.model_name.human)
     end
   end
 
   def destroy
     @comment.destroy
-    redirect_to @comment.commentable, notice: "コメントを削除しました"
+    redirect_to @comment.commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
