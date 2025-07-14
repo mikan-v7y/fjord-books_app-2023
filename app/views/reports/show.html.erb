@@ -16,10 +16,10 @@
   <% end %>
 </nav>
 
-<h2><%= t('comments.form.title') %></h2>
+<h2><%= t('views.comments.list.title') %></h2>
 
 <%= render "comments/form", commentable: @report %>
 
-<h2><%= t('comments.list.title') %></h2>
+<h2><%= t('views.comments.list.title') %></h2>
 
 <%= render "comments/comment", commentable: @report %>
