@@ -8,7 +8,7 @@ class Report < ApplicationRecord
   has_many :mentioning_reports, through: :given_mentions, source: :target_report
 
   has_many :received_mentions, class_name 'Mention', foreign_key: 'target_report_id', dependent: :destroy
-  has_many: mentioned_reports, through: :received_mentions, source: :source_report
+  has_many :mentioned_reports, through: :received_mentions, source: :source_report
 
   validates :title, presence: true
   validates :content, presence: true
