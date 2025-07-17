@@ -31,6 +31,7 @@ class ReportsController < ApplicationController
 
   def update
     if @report.update(report_params)
+      detect_report_url_and_update_mentions(@report)
       redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
       render :edit, status: :unprocessable_entity
