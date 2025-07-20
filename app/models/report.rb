@@ -21,18 +21,25 @@ class Report < ApplicationRecord
     created_at.to_date
   end
 
-  # 引数のreportは、これから作成or更新されるReportオブジェクト
-  def detect_report_url_and_update_mentions(report)
-    # content内のURLからreport_idを検知し、変数に格納（例: /reports/1）
-    mentioned_report_ids = report.content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten.map(&:to_i)
+  def detect_report_url_from_content
+    content.scan(%r{/reports/(\d+)}).flatten.map(&:to_i)
+  end
 
-    # source_report_id（言及元のid）がこのreport.idと同じ場合、mentionsテーブルからそのレコードを削除
-    report.given_mentions.destroy_all
+  # source_report_id（言及元のid）がこの@reportのidと等しいレコードを、mentionsテーブルから削除
+  def delete_existing_mentions
+    given_mentions.destroy_all
+  end
 
-    # 新しいMentionのレコードを作成
+  def register_new_mentions_with_mentions_table(mentioned_report_ids)
     mentioned_report_ids.uniq.each do |target_id| # 配列内に言及先の日報のidが2つ以上存在する場合、uniqメソッドで1つにする
-      next if target_id == report.id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
-      Mention.create(source_report_id: report.id, target_report_id: target_id)
+      next if target_id == self.id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
+      Mention.create(source_report_id: self.id, target_report_id: target_id)
     end
+  end
+
+  def detect_report_url_and_update_mentions_table
+    mentioned_report_ids = detect_report_url_from_content
+    delete_existing_mentions
+    register_new_mentions_with_mentions_table(mentioned_report_ids)
   end
 end

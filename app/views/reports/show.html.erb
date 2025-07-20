@@ -4,6 +4,15 @@
   <%= render @report %>
 </div>
 
+<% if @report.mentioned_reports.any? %>
+  <h2>この日報は以下の日報から言及されています</h2>
+  <ul>
+    <% @report.mentioned_reports.each do |source_report| %>
+      <li><%= link_to "##{source_report.id} #{source_report.title}", report_path(source_report) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= render 'shared/comments', commentable: @report %>
 
 <nav class="page-nav">
