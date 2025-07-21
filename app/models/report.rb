@@ -4,10 +4,10 @@ class Report < ApplicationRecord
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
 
-  has_many :given_mentions, class_name: 'Mention', foreign_key: 'source_report_id', dependent: :destroy
+  has_many :given_mentions, class_name: 'Mention', foreign_key: 'source_report_id', dependent: :destroy, inverse_of: :source_report
   has_many :mentioning_reports, through: :given_mentions, source: :target_report
 
-  has_many :received_mentions, class_name: 'Mention', foreign_key: 'target_report_id', dependent: :destroy
+  has_many :received_mentions, class_name: 'Mention', foreign_key: 'target_report_id', dependent: :destroy, inverse_of: :target_report
   has_many :mentioned_reports, through: :received_mentions, source: :source_report
 
   validates :title, presence: true
@@ -32,8 +32,9 @@ class Report < ApplicationRecord
 
   def register_new_mentions_with_mentions_table(mentioned_report_ids)
     mentioned_report_ids.uniq.each do |target_id| # 配列内に言及先の日報のidが2つ以上存在する場合、uniqメソッドで1つにする
-      next if target_id == self.id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
-      Mention.create(source_report_id: self.id, target_report_id: target_id)
+      next if target_id == id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
+
+      Mention.create(source_report_id: id, target_report_id: target_id)
     end
   end
 
