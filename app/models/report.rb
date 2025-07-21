@@ -22,7 +22,7 @@ class Report < ApplicationRecord
   end
 
   def detect_report_url_from_content
-    content.scan(%r{/reports/(\d+)}).flatten.map(&:to_i)
+    content.scan(%r{http://(?:localhost|127\.0\.0\.1):3000/reports/(\d+)}).flatten.map(&:to_i)
   end
 
   # source_report_id（言及元のid）がこの@reportのidと等しいレコードを、mentionsテーブルから削除
