@@ -13,8 +13,8 @@
 
 <h2><%= t('views.comments.form.title') %></h2>
 
-<%= render "comments/form", commentable: @book %>
+<%= render "books/comments/form", commentable: @book %>
 
 <h2><%= t('views.comments.list.title') %></h2>
 
-<%= render "comments/comment", commentable: @book %>
+<%= render "books/comments/comment", commentable: @book %>
