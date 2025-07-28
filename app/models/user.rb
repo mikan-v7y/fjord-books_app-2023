@@ -8,11 +8,7 @@ class User < ApplicationRecord
     attachable.variant :thumb, resize_to_limit: [150, 150]
   end
 
-  devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   def display_name
     (name.presence || email)
