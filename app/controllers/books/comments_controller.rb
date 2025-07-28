@@ -4,6 +4,7 @@ module Books
   class CommentsController < ApplicationController
     before_action :set_book
     before_action :set_comment, only: [:edit, :update, :destroy]
+    before_action :set_commentable
 
     def create
       @comment = @book.comments.build(comment_params)
