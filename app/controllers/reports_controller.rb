@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit update destroy]
+  before_action :find_own_report, only: %i[edit update destroy]
+  before_action :find_report, only: [:show]
 
   # GET /reports or /reports.json
   def index
@@ -49,8 +50,12 @@ class ReportsController < ApplicationController
 
   private
 
+  def find_own_report
+    @report = current_user.reports.find(params[:id])
+  end
+
   # Use callbacks to share common setup or constraints between actions.
-  def set_report
+  def find_report
     @report = Report.find(params[:id])
   end
 
