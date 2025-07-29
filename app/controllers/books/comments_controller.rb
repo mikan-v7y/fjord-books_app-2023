@@ -7,8 +7,7 @@ module Books
     before_action :set_commentable
 
     def create
-      @comment = @book.comments.build(comment_params)
-      @comment.user = current_user
+      @comment = current_user.comments.build(comment_params.merge(commentable: @book))
 
       if @comment.save
         redirect_to @book, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
