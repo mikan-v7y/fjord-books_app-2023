@@ -3,7 +3,7 @@
 module Reports
   class CommentsController < ApplicationController
     before_action :set_report
-    before_action :set_comment, only: [:edit, :update, :destroy]
+    before_action :set_comment, only: %i[edit update destroy]
     before_action :set_commentable
 
     def create
