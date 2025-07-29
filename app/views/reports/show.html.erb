@@ -10,7 +10,7 @@
 
 <h2><%= t('views.comments.list.title') %></h2>
 
-<%= render "reports/comments/comment", commentable: @report %>
+<%= render "reports/comments/comments", commentable: @report %>
 
 <nav class="page-nav">
   <% if current_user == @report.user %>

@@ -10,7 +10,7 @@
 
 <h2><%= t('views.comments.list.title') %></h2>
 
-<%= render "books/comments/comment", commentable: @book %>
+<%= render "books/comments/comments", commentable: @book %>
 
 <nav class="page-nav">
   <%= link_to t('views.common.edit', name: Book.model_name.human.downcase), edit_book_path(@book) %> |
