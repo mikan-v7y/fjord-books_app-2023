@@ -7,7 +7,7 @@ module Reports
     before_action :set_commentable
 
     def create
-      @comment = current_user.comments.build(comment_params.merge(commentable: @report))
+      @comment = current_user.comments.build(commentable: @report, **comment_params)
 
       if @comment.save
         redirect_to @report, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
