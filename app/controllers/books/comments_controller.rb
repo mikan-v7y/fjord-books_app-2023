@@ -4,7 +4,6 @@ module Books
   class CommentsController < ApplicationController
     before_action :set_book
     before_action :set_comment, only: %i[edit update destroy]
-    before_action :set_commentable
 
     def create
       @comment = current_user.comments.build(commentable: @book, **comment_params)
@@ -43,10 +42,6 @@ module Books
 
     def comment_params
       params.require(:comment).permit(:content)
-    end
-
-    def set_commentable
-      @commentable = @book
     end
   end
 end
