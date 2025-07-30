@@ -37,7 +37,7 @@ module Reports
     end
 
     def set_comment
-      @comment = @report.comments.find(params[:id])
+      @comment = current_user.comments.find_by(id: params[:id], commentable: @report)
     end
 
     def comment_params

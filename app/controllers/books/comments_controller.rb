@@ -37,7 +37,7 @@ module Books
     end
 
     def set_comment
-      @comment = @book.comments.find(params[:id])
+      @comment = current_user.comments.find_by(id: params[:id], commentable: @book)
     end
 
     def comment_params
