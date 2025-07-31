@@ -202,11 +202,26 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
+    comments:
+      form:
+        title: コメントを書き込む
+        submit: 投稿
+      list:
+        title: "コメント一覧"
+        posted_by: "%{name} さんが %{date} に投稿"
+        no_comments: まだコメントはありません
+        edit: 編集
+        update: 更新
+        delete: 削除
+      edit:
+        title: コメント編集
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_create_failure: "%{name}の投稿に失敗しました。"
+      notice_update_failure: "%{name}の更新に失敗しました。"
   layouts:
     application:
       menu: メニュー

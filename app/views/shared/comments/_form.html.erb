@@ -1,0 +1,8 @@
+<%= form_with(model: [commentable, comment]) do |f| %>
+  <div>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit t('views.comments.list.update') %>
+  </div>
+<% end %>
