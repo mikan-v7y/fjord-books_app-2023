@@ -38,7 +38,7 @@ class Report < ApplicationRecord
     end
   end
 
-  def detect_report_url_and_update_mentions_table
+  def save_with_mentions
     mentioned_report_ids = detect_report_url_from_content
     delete_existing_mentions
     register_new_mentions_with_mentions_table(mentioned_report_ids)
