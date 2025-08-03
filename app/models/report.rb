@@ -34,7 +34,7 @@ class Report < ApplicationRecord
     mentioned_report_ids.uniq.each do |target_id| # 配列内に言及先の日報のidが2つ以上存在する場合、uniqメソッドで1つにする
       next if target_id == id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
 
-      Mention.create(source_report_id: id, target_report_id: target_id)
+      Mention.create!(source_report_id: id, target_report_id: target_id)
     end
   end
 
