@@ -25,13 +25,12 @@ class Report < ApplicationRecord
     content.scan(%r{http://(?:localhost|127\.0\.0\.1):3000/reports/(\d+)}).flatten.map(&:to_i)
   end
 
-  # source_report_id（言及元のid）がこの@reportのidと等しいレコードを、mentionsテーブルから削除
   def delete_existing_mentions
     given_mentions.destroy_all
   end
 
   def register_new_mentions_with_mentions_table(mentioned_report_ids)
-    mentioned_report_ids.uniq.each do |target_id| # 配列内に言及先の日報のidが2つ以上存在する場合、uniqメソッドで1つにする
+    mentioned_report_ids.uniq.each do |target_id|
       next if target_id == id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
 
       Mention.create!(source_report_id: id, target_report_id: target_id)
