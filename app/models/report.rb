@@ -21,11 +21,7 @@ class Report < ApplicationRecord
     created_at.to_date
   end
 
-  def detect_report_url_from_content
-    content.scan(%r{http://(?:localhost|127\.0\.0\.1):3000/reports/(\d+)}).flatten.map(&:to_i)
-  end
-
-  def register_new_mentions_with_mentions_table(mentioned_report_ids)
+  def create_mentions!(mentioned_report_ids)
     mentioned_report_ids.uniq.each do |target_id|
       next if target_id == id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
 
@@ -34,8 +30,13 @@ class Report < ApplicationRecord
   end
 
   def save_with_mentions!
-    mentioned_report_ids = detect_report_url_from_content
     given_mentions.destroy_all
-    register_new_mentions_with_mentions_table(mentioned_report_ids)
+    create_mentions!(mentioned_report_ids)
+  end
+
+  private
+
+  def mentioned_report_ids
+    @mentioned_report_ids ||= content.scan(%r{http://(?:localhost|127\.0\.0\.1):3000/reports/(\d+)}).flatten.map(&:to_i)
   end
 end
