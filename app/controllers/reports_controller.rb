@@ -23,7 +23,7 @@ class ReportsController < ApplicationController
 
     ActiveRecord::Base.transaction do
       @report.save!
-      @report.save_with_mentions
+      @report.save_with_mentions!
     end
 
     redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
@@ -34,7 +34,7 @@ class ReportsController < ApplicationController
   def update
     ActiveRecord::Base.transaction do
       @report.update!(report_params)
-      @report.save_with_mentions
+      @report.save_with_mentions!
     end
 
     redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
