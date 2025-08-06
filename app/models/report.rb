@@ -33,7 +33,7 @@ class Report < ApplicationRecord
     end
   end
 
-  def save_with_mentions
+  def save_with_mentions!
     mentioned_report_ids = detect_report_url_from_content
     given_mentions.destroy_all
     register_new_mentions_with_mentions_table(mentioned_report_ids)
