@@ -21,14 +21,6 @@ class Report < ApplicationRecord
     created_at.to_date
   end
 
-  def create_mentions!(mentioned_report_ids)
-    mentioned_report_ids.uniq.each do |target_id|
-      next if target_id == id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
-
-      Mention.create!(source_report_id: id, target_report_id: target_id)
-    end
-  end
-
   def save_with_mentions!
     given_mentions.destroy_all
     create_mentions!(mentioned_report_ids)
@@ -38,5 +30,13 @@ class Report < ApplicationRecord
 
   def mentioned_report_ids
     @mentioned_report_ids ||= content.scan(%r{http://(?:localhost|127\.0\.0\.1):3000/reports/(\d+)}).flatten.map(&:to_i)
+  end
+
+  def create_mentions!(mentioned_report_ids)
+    mentioned_report_ids.uniq.each do |target_id|
+      next if target_id == id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
+
+      Mention.create!(source_report_id: id, target_report_id: target_id)
+    end
   end
 end
