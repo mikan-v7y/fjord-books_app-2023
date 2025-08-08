@@ -33,8 +33,16 @@ class Report < ApplicationRecord
   end
 
   def create_mentions!(mentioned_report_ids)
-    mentioned_report_ids.uniq.each do |target_id|
-      next if target_id == id  # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
+    valid_ids = Report.where(id: mentioned_report_ids).pluck(:id)
+    invalid_ids = mentioned_report_ids - valid_ids
+
+    if invalid_ids.any?
+      errors.add(:base, "存在しない日報への言及があります")
+      raise ActiveRecord::RecordInvalid.new(self)
+    end
+
+    valid_ids.uniq.each do |target_id|
+      next if target_id == id # 自己言及は不自然なのでスキップ（日報内で自分を言及するのは不自然）
 
       Mention.create!(source_report_id: id, target_report_id: target_id)
     end
