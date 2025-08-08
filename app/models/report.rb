@@ -37,8 +37,8 @@ class Report < ApplicationRecord
     invalid_ids = mentioned_report_ids - valid_ids
 
     if invalid_ids.any?
-      errors.add(:base, "存在しない日報への言及があります")
-      raise ActiveRecord::RecordInvalid.new(self)
+      errors.add(:base, '存在しない日報への言及があります')
+      raise ActiveRecord::RecordInvalid, self
     end
 
     valid_ids.uniq.each do |target_id|
