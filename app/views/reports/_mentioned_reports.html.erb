@@ -1,0 +1,8 @@
+<% if @report.mentioned_reports.any? %>
+  <h2><%= t('views.reports.show.mentioned_by_others') %></h2>
+  <ul>
+    <% @report.mentioned_reports.each do |source_report| %>
+      <li><%= link_to "##{source_report.id} #{source_report.title}", report_path(source_report) %></li>
+    <% end %>
+  </ul>
+<% end %>
