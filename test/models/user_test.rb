@@ -8,8 +8,8 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   test "#name_or_email" do
-    user = User.new(email: 'foo@example.com', name: '')
+    user = User.new(email: 'mikan@example.com', name: '')
 
-    assert_equal 'foo@example.com', user.name_or_email
+    assert_equal 'mikan@example.com', user.name_or_email
   end
 end
