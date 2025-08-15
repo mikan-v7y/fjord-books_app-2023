@@ -4,8 +4,10 @@ one:
   title: "aliceの日報"
   content: "この日報の作成者はaliceです。"
   user: one
+  created_at: 2025-08-15 10:30:00
 
 two:
   title: "bobの日報"
   content: "この日報の作成者はbobです。"
   user: two
+  created_at: 2025-08-16 09:00:00

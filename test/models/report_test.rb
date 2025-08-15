@@ -12,4 +12,10 @@ class ReportTest < ActiveSupport::TestCase
     report = reports(:two)
     assert_not report.editable?(users(:one))
   end
+
+  test 'created_on' do
+    report = reports(:one)
+    assert_instance_of Date, report.created_on
+    assert_equal Date.new(2025, 8, 15), report.created_on
+  end
 end
