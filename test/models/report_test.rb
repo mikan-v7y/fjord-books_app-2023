@@ -29,4 +29,10 @@ class ReportTest < ActiveSupport::TestCase
     @alice_report.send(:save_mentions)
     assert_not_includes @alice_report.mentioning_reports, @alice_report
   end
+
+  test 'save_mentions: reports are included in the mentioning_reports' do
+    @alice_report.content = "aliceの日報でbobの日報を言及する http://localhost:3000/reports/#{@bob_report.id}"
+    @alice_report.send(:save_mentions)
+    assert_includes @alice_report.mentioning_reports, @bob_report
+  end
 end
