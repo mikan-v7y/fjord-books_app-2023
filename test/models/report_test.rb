@@ -42,4 +42,11 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal 1, @alice_report.mentioning_reports.size
     assert_not_equal 2, @alice_report.mentioning_reports.size
   end
+
+  test 'save:mentions: non-existent report is ignored' do
+    @alice_report.content = "aliceの日報で存在しない日報を言及する http://localhost:3000/reports/7777"
+    @alice_report.send(:save_mentions)
+
+    assert_empty @alice_report.mentioning_reports
+  end
 end
