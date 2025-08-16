@@ -24,7 +24,7 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal Date.new(2025, 8, 15), report.created_on
   end
 
-  test 'save_mentions: not mention myself' do
+  test 'save_mentions: self-reference is not registered' do
     @alice_report.content = "自分自身の日報を言及する http://localhost:3000/reports/#{@alice_report.id}"
     @alice_report.send(:save_mentions)
     assert_not_includes @alice_report.mentioning_reports, @alice_report
@@ -46,7 +46,6 @@ class ReportTest < ActiveSupport::TestCase
   test 'save:mentions: non-existent report is ignored' do
     @alice_report.content = "aliceの日報で存在しない日報を言及する http://localhost:3000/reports/7777"
     @alice_report.send(:save_mentions)
-
     assert_empty @alice_report.mentioning_reports
   end
 end
