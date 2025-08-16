@@ -35,4 +35,11 @@ class ReportTest < ActiveSupport::TestCase
     @alice_report.send(:save_mentions)
     assert_includes @alice_report.mentioning_reports, @bob_report
   end
+
+  test 'save_mentions: same mention relationship cannot be registered twice' do
+    @alice_report.content = "aliceの日報でbobの日報を2回言及する。1回目の言及→http://localhost:3000/reports/#{@bob_report.id} 2回目の言及→http://localhost:3000/reports/#{@bob_report.id}"
+    @alice_report.send(:save_mentions)
+    assert_equal 1, @alice_report.mentioning_reports.size
+    assert_not_equal 2, @alice_report.mentioning_reports.size
+  end
 end
