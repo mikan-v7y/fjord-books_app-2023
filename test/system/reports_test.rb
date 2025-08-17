@@ -31,6 +31,23 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text "この日報の作成者はaliceです"
   end
 
+  test "update a report" do
+    login_as(@alice)
+
+    visit reports_path
+    visit report_path(@alice_report)
+
+    click_on "この日報を編集"
+
+    fill_in "タイトル", with: "aliceの日報のタイトルを変更します"
+    fill_in "内容", with: "内容も変更します"
+    click_on "更新する"
+
+    assert_text "日報が更新されました。"
+    assert_text "aliceの日報のタイトルを変更します"
+    assert_text "内容も変更します"
+  end
+
   # test 'visiting the index' do
   #   visit reports_url
   #   assert_selector 'h1', text: 'Reports'
