@@ -48,6 +48,19 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text "内容も変更します"
   end
 
+  test "destroy a report" do
+    login_as(@alice)
+
+    visit reports_path
+    visit report_path(@alice_report)
+
+    click_on "この日報を削除"
+
+    assert_text "日報が削除されました"
+    visit reports_path
+    assert_no_text @alice_report.title
+  end
+
   # test 'visiting the index' do
   #   visit reports_url
   #   assert_selector 'h1', text: 'Reports'
