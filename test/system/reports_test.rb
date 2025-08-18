@@ -11,10 +11,13 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test "create a new report" do
-    visit reports_path
-    click_on "日報の新規作成"
+    visit_reports_index
 
-    fill_report_form(title: "aliceの新しい日報", content: "この日報の作成者はaliceです")
+    click_on "日報の新規作成"
+    assert_css 'h1', text: '日報の新規作成'
+
+    fill_in_report(title: "aliceの新しい日報", content: "この日報の作成者はaliceです")
+
     click_on "登録する"
 
     assert_text "日報が作成されました"
@@ -23,12 +26,14 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test "update a report" do
-    visit reports_path
-    visit report_path(@alice_report)
+    visit_reports_index
+    visit_report(@alice_report)
 
     click_on "この日報を編集"
+    assert_css 'h1', text: '日報の編集'
 
-    fill_report_form(title: "aliceの日報のタイトルを変更します", content: "内容も変更します")
+    fill_in_report(title: "aliceの日報のタイトルを変更します", content: "内容も変更します")
+
     click_on "更新する"
 
     assert_text "日報が更新されました。"
@@ -37,24 +42,36 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test "destroy a report" do
-    visit reports_path
-    visit report_path(@alice_report)
+    visit_reports_index
+    visit_report(@alice_report)
 
     click_on "この日報を削除"
 
     assert_text "日報が削除されました"
-    visit reports_path
     assert_no_text @alice_report.title
+    assert_nil Report.find_by(id: @alice_report.id)
   end
 
   def login_as(user)
     visit root_path
     fill_in "Eメール", with: user.email
-    fill_in "パスワード", with: "password"
+    fill_in "パスワード", with: "alice137"
+
     click_on "ログイン"
+    assert_css 'h1', text: '本の一覧'
   end
 
-  def fill_report_form(title:, content:)
+  def visit_reports_index
+    visit reports_path
+    assert_css 'h1', text: '日報の一覧'
+  end
+
+  def visit_report(report)
+    visit report_path(report)
+    assert_css 'h1', text: '日報の詳細'
+  end
+
+  def fill_in_report(title:, content:)
     fill_in "タイトル", with: title
     fill_in "内容", with: content
   end
