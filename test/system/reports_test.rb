@@ -7,6 +7,7 @@ class ReportsTest < ApplicationSystemTestCase
   setup do
     @alice = users(:one)
     @alice_report = reports(:one)
+    login_as(@alice)
   end
 
   def login_as(user)
@@ -17,8 +18,6 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test "create a new report" do
-    login_as(@alice)
-
     visit reports_path
     click_on "日報の新規作成"
 
@@ -32,8 +31,6 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test "update a report" do
-    login_as(@alice)
-
     visit reports_path
     visit report_path(@alice_report)
 
@@ -49,8 +46,6 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test "destroy a report" do
-    login_as(@alice)
-
     visit reports_path
     visit report_path(@alice_report)
 
