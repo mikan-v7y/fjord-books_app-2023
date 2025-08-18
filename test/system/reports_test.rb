@@ -3,61 +3,60 @@
 require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
-
   setup do
     @alice = users(:one)
     @alice_report = reports(:one)
     login_as(@alice)
   end
 
-  test "create a new report" do
+  test 'create a new report' do
     visit_reports_index
 
-    click_on "日報の新規作成"
+    click_on '日報の新規作成'
     assert_css 'h1', text: '日報の新規作成'
 
-    fill_in_report(title: "aliceの新しい日報", content: "この日報の作成者はaliceです")
+    fill_in_report(title: 'aliceの新しい日報', content: 'この日報の作成者はaliceです')
 
-    click_on "登録する"
+    click_on '登録する'
 
-    assert_text "日報が作成されました"
-    assert_text "aliceの新しい日報"
-    assert_text "この日報の作成者はaliceです"
+    assert_text '日報が作成されました'
+    assert_text 'aliceの新しい日報'
+    assert_text 'この日報の作成者はaliceです'
   end
 
-  test "update a report" do
+  test 'update a report' do
     visit_reports_index
     visit_report(@alice_report)
 
-    click_on "この日報を編集"
+    click_on 'この日報を編集'
     assert_css 'h1', text: '日報の編集'
 
-    fill_in_report(title: "aliceの日報のタイトルを変更します", content: "内容も変更します")
+    fill_in_report(title: 'aliceの日報のタイトルを変更します', content: '内容も変更します')
 
-    click_on "更新する"
+    click_on '更新する'
 
-    assert_text "日報が更新されました。"
-    assert_text "aliceの日報のタイトルを変更します"
-    assert_text "内容も変更します"
+    assert_text '日報が更新されました。'
+    assert_text 'aliceの日報のタイトルを変更します'
+    assert_text '内容も変更します'
   end
 
-  test "destroy a report" do
+  test 'destroy a report' do
     visit_reports_index
     visit_report(@alice_report)
 
-    click_on "この日報を削除"
+    click_on 'この日報を削除'
 
-    assert_text "日報が削除されました"
+    assert_text '日報が削除されました'
     assert_no_text @alice_report.title
     assert_nil Report.find_by(id: @alice_report.id)
   end
 
   def login_as(user)
     visit root_path
-    fill_in "Eメール", with: user.email
-    fill_in "パスワード", with: "alice137"
+    fill_in 'Eメール', with: user.email
+    fill_in 'パスワード', with: 'alice137'
 
-    click_on "ログイン"
+    click_on 'ログイン'
     assert_css 'h1', text: '本の一覧'
   end
 
@@ -72,7 +71,7 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   def fill_in_report(title:, content:)
-    fill_in "タイトル", with: title
-    fill_in "内容", with: content
+    fill_in 'タイトル', with: title
+    fill_in '内容', with: content
   end
 end

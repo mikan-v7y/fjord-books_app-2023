@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "#name_or_email" do
+  test '#name_or_email' do
     user = User.new(email: 'mikan@example.com', name: '')
     assert_equal 'mikan@example.com', user.name_or_email
 
