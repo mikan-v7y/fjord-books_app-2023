@@ -10,19 +10,11 @@ class ReportsTest < ApplicationSystemTestCase
     login_as(@alice)
   end
 
-  def login_as(user)
-    visit root_path
-    fill_in "Eメール", with: user.email
-    fill_in "パスワード", with: "alice137"
-    click_on "ログイン"
-  end
-
   test "create a new report" do
     visit reports_path
     click_on "日報の新規作成"
 
-    fill_in "タイトル", with: "aliceの新しい日報"
-    fill_in "内容", with: "この日報の作成者はaliceです"
+    fill_report_form(title: "aliceの新しい日報", content: "この日報の作成者はaliceです")
     click_on "登録する"
 
     assert_text "日報が作成されました"
@@ -36,8 +28,7 @@ class ReportsTest < ApplicationSystemTestCase
 
     click_on "この日報を編集"
 
-    fill_in "タイトル", with: "aliceの日報のタイトルを変更します"
-    fill_in "内容", with: "内容も変更します"
+    fill_report_form(title: "aliceの日報のタイトルを変更します", content: "内容も変更します")
     click_on "更新する"
 
     assert_text "日報が更新されました。"
@@ -54,5 +45,17 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text "日報が削除されました"
     visit reports_path
     assert_no_text @alice_report.title
+  end
+
+  def login_as(user)
+    visit root_path
+    fill_in "Eメール", with: user.email
+    fill_in "パスワード", with: "password"
+    click_on "ログイン"
+  end
+
+  def fill_report_form(title:, content:)
+    fill_in "タイトル", with: title
+    fill_in "内容", with: content
   end
 end
