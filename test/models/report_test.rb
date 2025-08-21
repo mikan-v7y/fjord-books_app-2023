@@ -30,7 +30,7 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal Date.new(2025, 8, 15), report.created_on
   end
 
-  # save_mentionsをテスト
+  # after_saveから、間接的にsave_mentionsをテスト
 
   test 'self-reference is not registered' do
     @alice_report.content = "自分自身の日報を言及する http://localhost:3000/reports/#{@alice_report.id}"
@@ -57,7 +57,7 @@ class ReportTest < ActiveSupport::TestCase
     assert_empty @alice_report.mentioning_reports
   end
 
-  # 更新した際に言及内容も更新されることをテスト
+  # 日報を更新した際に言及内容も更新されることをテスト
 
   test 'mentioning_reports are correctly updated  when content changes' do
     @alice_report.content = "aliceの日報で、bobとcarolの日報を言及する。bobの日報に言及→http://localhost:3000/reports/#{@bob_report.id} carolの日報に言及→http://localhost:3000/reports/#{@carol_report.id}"
