@@ -12,14 +12,12 @@ class ReportTest < ActiveSupport::TestCase
 
   # editable?をテスト
 
-  test 'editable a Report' do
-    report = reports(:one)
-    assert report.editable?(users(:one))
-  end
+  test '#editable' do
+    alice = users(:one)
+    bob = users(:two)
 
-  test 'uneditable a Report' do
-    report = reports(:two)
-    assert_not report.editable?(users(:one))
+    assert @alice_report.editable?(alice)
+    assert_not @alice_report.editable?(bob)
   end
 
   # created_onをテスト
