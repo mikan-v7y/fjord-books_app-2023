@@ -11,3 +11,11 @@ one:
 two:
   mentioning: two
   mentioned: one
+
+three:
+  mentioning: one
+  mentioned: three
+
+four:
+  mentioning: one
+  mentioned: four

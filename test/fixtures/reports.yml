@@ -11,3 +11,15 @@ two:
   content: "この日報の作成者はbobです。"
   user: two
   created_at: 2025-08-16 09:00:00
+
+three:
+  title: "carolの日報"
+  content: "この日報の作成者はcarolです。"
+  user: three
+  created_at: 2025-08-17 11:30:00
+
+four:
+  title: "daveの日報"
+  content: "この日報の作成者はdaveです。"
+  user: four
+  created_at: 2025-08-18 12:30:00

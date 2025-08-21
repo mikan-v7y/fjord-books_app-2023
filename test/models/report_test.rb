@@ -6,6 +6,8 @@ class ReportTest < ActiveSupport::TestCase
   def setup
     @alice_report = reports(:one)
     @bob_report = reports(:two)
+    @carol_report = reports(:three)
+    @dave_report = reports(:four)
   end
 
   # editable?をテスト
@@ -53,5 +55,24 @@ class ReportTest < ActiveSupport::TestCase
     @alice_report.content = 'aliceの日報で存在しない日報を言及する http://localhost:3000/reports/7777'
     @alice_report.save!
     assert_empty @alice_report.mentioning_reports
+  end
+
+  # 更新した際に言及内容も更新されることをテスト
+
+  test 'mentioning_reports are correctly updated  when content changes' do
+    @alice_report.content = "aliceの日報で、bobとcarolの日報を言及する。bobの日報に言及→http://localhost:3000/reports/#{@bob_report.id} carolの日報に言及→http://localhost:3000/reports/#{@carol_report.id}"
+    @alice_report.save!
+
+    assert_includes @alice_report.mentioning_reports, @bob_report
+    assert_includes @alice_report.mentioning_reports, @carol_report
+
+    # 更新内容: bobは残す（保持）、carolは削除、daveを追加
+    @alice_report.content = "aliceの日報で、bobとdaveの日報を言及する。bobの日報に言及→http://localhost:3000/reports/#{@bob_report.id} daveの日報に言及→http://localhost:3000/reports/#{@dave_report.id}"
+    @alice_report.save!
+    @alice_report.reload
+
+    assert_includes @alice_report.mentioning_reports, @bob_report
+    assert_not_includes @alice_report.mentioning_reports, @carol_report
+    assert_includes @alice_report.mentioning_reports, @dave_report
   end
 end
