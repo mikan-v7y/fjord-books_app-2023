@@ -32,26 +32,26 @@ class ReportTest < ActiveSupport::TestCase
 
   test 'self-reference is not registered' do
     @alice_report.content = "自分自身の日報を言及する http://localhost:3000/reports/#{@alice_report.id}"
-    @alice_report.send(:save_mentions)
+    @alice_report.save!
     assert_not_includes @alice_report.mentioning_reports, @alice_report
   end
 
   test 'save_mentions: reports are included in the mentioning_reports' do
     @alice_report.content = "aliceの日報でbobの日報を言及する http://localhost:3000/reports/#{@bob_report.id}"
-    @alice_report.send(:save_mentions)
+    @alice_report.save!
     assert_includes @alice_report.mentioning_reports, @bob_report
   end
 
   test 'same mention relationship cannot be registered twice' do
     @alice_report.content = "aliceの日報でbobの日報を2回言及する。1回目の言及→http://localhost:3000/reports/#{@bob_report.id} 2回目の言及→http://localhost:3000/reports/#{@bob_report.id}"
-    @alice_report.send(:save_mentions)
+    @alice_report.save!
     assert_equal 1, @alice_report.mentioning_reports.size
     assert_not_equal 2, @alice_report.mentioning_reports.size
   end
 
   test 'non-existent report is ignored' do
     @alice_report.content = 'aliceの日報で存在しない日報を言及する http://localhost:3000/reports/7777'
-    @alice_report.send(:save_mentions)
+    @alice_report.save!
     assert_empty @alice_report.mentioning_reports
   end
 end
