@@ -3,6 +3,8 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
+  include ActiveSupport::Testing::TimeHelpers
+
   def setup
     @alice_report = reports(:one)
     @bob_report = reports(:two)
@@ -19,9 +21,11 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test 'created_on' do
-    report = reports(:one)
-    assert_instance_of Date, report.created_on
-    assert_equal Date.new(2025, 8, 15), report.created_on
+    travel_to Time.zone.local(2025, 8, 15, 12, 0, 0) do
+      report = Report.create!(title: "aliceの日報", content: "この日報の作成者はaliceです", user: users(:one))
+      assert_instance_of Date, report.created_on
+      assert_equal Date.new(2025, 8, 15), report.created_on
+    end
   end
 
   # after_saveから、間接的にsave_mentionsをテスト
