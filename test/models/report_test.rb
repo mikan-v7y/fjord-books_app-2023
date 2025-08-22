@@ -10,8 +10,6 @@ class ReportTest < ActiveSupport::TestCase
     @dave_report = reports(:four)
   end
 
-  # editable?をテスト
-
   test '#editable' do
     alice = users(:one)
     bob = users(:two)
@@ -19,8 +17,6 @@ class ReportTest < ActiveSupport::TestCase
     assert @alice_report.editable?(alice)
     assert_not @alice_report.editable?(bob)
   end
-
-  # created_onをテスト
 
   test 'created_on' do
     report = reports(:one)
