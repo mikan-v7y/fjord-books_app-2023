@@ -20,7 +20,7 @@ class ReportTest < ActiveSupport::TestCase
     assert_not @alice_report.editable?(bob)
   end
 
-  test 'created_on' do
+  test '#created_on' do
     travel_to Time.zone.local(2025, 8, 15, 12, 0, 0) do
       report = Report.create!(title: 'aliceの日報', content: 'この日報の作成者はaliceです', user: users(:one))
       assert_instance_of Date, report.created_on
