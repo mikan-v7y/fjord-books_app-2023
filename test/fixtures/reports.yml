@@ -3,7 +3,7 @@
 one:
   title: "aliceの日報"
   content: "この日報の作成者はaliceです。"
-  user: one
+  user: alice
 
 two:
   title: "bobの日報"

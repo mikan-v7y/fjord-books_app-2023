@@ -13,7 +13,7 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test '#editable' do
-    alice = users(:one)
+    alice = users(:alice)
     bob = users(:two)
 
     assert @alice_report.editable?(alice)
@@ -22,7 +22,7 @@ class ReportTest < ActiveSupport::TestCase
 
   test '#created_on' do
     travel_to Time.zone.local(2025, 8, 15) do
-      report = Report.create!(title: 'aliceの日報', content: 'この日報の作成者はaliceです', user: users(:one))
+      report = Report.create!(title: 'aliceの日報', content: 'この日報の作成者はaliceです', user: users(:alice))
       assert_instance_of Date, report.created_on
       assert_equal Date.new(2025, 8, 15), report.created_on
     end

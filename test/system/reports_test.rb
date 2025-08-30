@@ -4,7 +4,7 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
-    @alice = users(:one)
+    @alice = users(:alice)
     @alice_report = reports(:one)
     login_as(@alice)
   end
