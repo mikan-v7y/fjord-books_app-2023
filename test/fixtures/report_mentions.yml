@@ -6,10 +6,10 @@
 #
 one:
   mentioning: alice_report
-  mentioned: two
+  mentioned: bob_report
 
 two:
-  mentioning: two
+  mentioning: bob_report
   mentioned: alice_report
 
 three:

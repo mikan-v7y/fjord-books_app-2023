@@ -5,7 +5,7 @@ alice_report:
   content: "この日報の作成者はaliceです。"
   user: alice
 
-two:
+bob_report:
   title: "bobの日報"
   content: "この日報の作成者はbobです。"
   user: bob
@@ -13,7 +13,7 @@ two:
 three:
   title: "carolの日報"
   content: "この日報の作成者はcarolです。"
-  user: three
+  user: carol
 
 four:
   title: "daveの日報"
