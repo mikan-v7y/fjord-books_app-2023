@@ -1,13 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+alice_comment_on_bob_report:
   user: alice
-  commentable: one
-  commentable_type: Commentable
-  content: MyString
-
-two:
-  user: bob
-  commentable: two
-  commentable_type: Commentable
-  content: MyString
+  commentable: bob_report
+  commentable_type: Report
+  content: aliceがbobの日報にコメントを書きます
