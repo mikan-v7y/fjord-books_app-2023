@@ -9,7 +9,7 @@ class ReportTest < ActiveSupport::TestCase
     @alice_report = reports(:alice_report)
     @bob_report = reports(:bob_report)
     @carol_report = reports(:carol_report)
-    @dave_report = reports(:four)
+    @dave_report = reports(:dave_report)
   end
 
   test '#editable' do

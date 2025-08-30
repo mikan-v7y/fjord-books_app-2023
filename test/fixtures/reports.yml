@@ -15,7 +15,7 @@ carol_report:
   content: "この日報の作成者はcarolです。"
   user: carol
 
-four:
+dave_report:
   title: "daveの日報"
   content: "この日報の作成者はdaveです。"
   user: dave
