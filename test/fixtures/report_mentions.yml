@@ -4,18 +4,18 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
+alice_mentions_bob:
   mentioning: alice_report
   mentioned: bob_report
 
-two:
+bob_mentions_alice:
   mentioning: bob_report
   mentioned: alice_report
 
-three:
+alice_mentions_carol:
   mentioning: alice_report
   mentioned: carol_report
 
-four:
+alice_mentions_dave:
   mentioning: alice_report
   mentioned: dave_report
