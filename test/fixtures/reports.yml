@@ -8,7 +8,7 @@ alice_report:
 two:
   title: "bobの日報"
   content: "この日報の作成者はbobです。"
-  user: two
+  user: bob
 
 three:
   title: "carolの日報"

@@ -7,7 +7,7 @@ one:
   content: MyString
 
 two:
-  user: two
+  user: bob
   commentable: two
   commentable_type: Commentable
   content: MyString

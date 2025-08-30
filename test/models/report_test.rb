@@ -14,7 +14,7 @@ class ReportTest < ActiveSupport::TestCase
 
   test '#editable' do
     alice = users(:alice)
-    bob = users(:two)
+    bob = users(:bob)
 
     assert @alice_report.editable?(alice)
     assert_not @alice_report.editable?(bob)
