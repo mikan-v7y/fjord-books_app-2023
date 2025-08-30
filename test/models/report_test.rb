@@ -6,7 +6,7 @@ class ReportTest < ActiveSupport::TestCase
   include ActiveSupport::Testing::TimeHelpers
 
   def setup
-    @alice_report = reports(:one)
+    @alice_report = reports(:alice_report)
     @bob_report = reports(:two)
     @carol_report = reports(:three)
     @dave_report = reports(:four)

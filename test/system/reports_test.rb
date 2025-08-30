@@ -5,7 +5,7 @@ require 'application_system_test_case'
 class ReportsTest < ApplicationSystemTestCase
   setup do
     @alice = users(:alice)
-    @alice_report = reports(:one)
+    @alice_report = reports(:alice_report)
     login_as(@alice)
   end
 

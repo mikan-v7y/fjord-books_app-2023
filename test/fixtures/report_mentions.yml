@@ -5,17 +5,17 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  mentioning: one
+  mentioning: alice_report
   mentioned: two
 
 two:
   mentioning: two
-  mentioned: one
+  mentioned: alice_report
 
 three:
-  mentioning: one
+  mentioning: alice_report
   mentioned: three
 
 four:
-  mentioning: one
+  mentioning: alice_report
   mentioned: four
