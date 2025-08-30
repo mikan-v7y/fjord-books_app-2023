@@ -10,7 +10,7 @@ bob_report:
   content: "この日報の作成者はbobです。"
   user: bob
 
-three:
+carol_report:
   title: "carolの日報"
   content: "この日報の作成者はcarolです。"
   user: carol

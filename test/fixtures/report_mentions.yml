@@ -14,7 +14,7 @@ two:
 
 three:
   mentioning: alice_report
-  mentioned: three
+  mentioned: carol_report
 
 four:
   mentioning: alice_report

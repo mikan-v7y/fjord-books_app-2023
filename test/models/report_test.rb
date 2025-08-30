@@ -8,7 +8,7 @@ class ReportTest < ActiveSupport::TestCase
   def setup
     @alice_report = reports(:alice_report)
     @bob_report = reports(:bob_report)
-    @carol_report = reports(:three)
+    @carol_report = reports(:carol_report)
     @dave_report = reports(:four)
   end
 
