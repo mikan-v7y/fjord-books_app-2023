@@ -8,10 +8,6 @@ alice_mentions_bob:
   mentioning: alice_report
   mentioned: bob_report
 
-bob_mentions_alice:
-  mentioning: bob_report
-  mentioned: alice_report
-
 alice_mentions_carol:
   mentioning: alice_report
   mentioned: carol_report
