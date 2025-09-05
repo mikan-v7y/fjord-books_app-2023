@@ -1,11 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  title: MyString
-  content: MyText
+alice_report:
+  title: "aliceの日報"
+  content: "この日報の作成者はaliceです。"
+  user: alice
 
-two:
-  user: two
-  title: MyString
-  content: MyText
+bob_report:
+  title: "bobの日報"
+  content: "この日報の作成者はbobです。"
+  user: bob
+
+carol_report:
+  title: "carolの日報"
+  content: "この日報の作成者はcarolです。"
+  user: carol
+
+dave_report:
+  title: "daveの日報"
+  content: "この日報の作成者はdaveです。"
+  user: dave
